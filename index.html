@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <title>Calculadora de IMC</title>
+</head>
+<body>
+
+    <h1 class="text-h1">Calculadora de <span>IMC</span></h1>
+
+    <div class="text-father">
+
+        <form onsubmit="return false"  method="get" id="imc-form">
+
+            <label for="nome">Nome Completo:</label>
+                <input type="text" name="nome" id="input-nome" placeholder="Ex: José da Silva Cunha">
+            <label for="peso">Digite seu peso:</label>
+                <input type="number" name="input-peso" id="input-peso" tabindex = "0" placeholder="Peso em KG">
+            <label for="altura">Digite sua altura:</label>
+                <input type="text" name="input-altura" id="input-altura" placeholder="Altura em metros">
+            <button type="submit" id="calculo" onclick="inputImc()">Calcular</button> 
+        </form>
+
+    </div>
+
+    <div class="image">
+        <img src="undraw_fitness_stats_sht6.svg" alt="homem_saudavel">
+    </div>
+
+    <div class="output-formated" id="output-formated">
+        <div class="output"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let form = document.getElementById("imc-form");
+            form.addEventListener("submit", inputImc);
+        });
+    </script>
+</body>
+</html>
